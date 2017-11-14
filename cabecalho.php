@@ -21,7 +21,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="formulario-pdf.php">Adiciona Produto</a></li>
                     <li><a href="lista-pdf.php">Listar Produtos</a></li>
-                    <li><a href="http://localhost:8080/phpmyadmin/index.php">admin</a></li>
+                    <li><a href="http://localhost/phpmyadmin/">admin</a></li>
                     
                 </ul>
             </div>

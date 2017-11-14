@@ -32,7 +32,7 @@ $pdfs = listaContratos($conexao);
         </td>
            
           
-         <td><?=$pdf['dataCad'];?></td>
+         <td><?=$pdf['vencimento'];?></td>
           
           
         <td>

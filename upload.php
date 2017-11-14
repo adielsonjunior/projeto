@@ -23,13 +23,13 @@ include("cabecalho.php");
   
     //insert no banco de dados
 
-    $sql_code = "INSERT INTO contratos (nome,arquivo,dataCad,vencimento,ativo) VALUES ('$nome','$nome_arquivo',NOW(),$vencimento,$ativo)";
+    $sql_code = "INSERT INTO contratos (nome,arquivo,vencimento,ativo,dataCad) VALUES ('$nome','$nome_arquivo','{$vencimento}',$ativo,NOW())";
       
     mysqli_query($conexao,$sql_code);
                 
      $ultimo_id =  mysqli_insert_id($conexao);
       
-      
+      var_dump($sql_code);
     //diretorio do upload
             
      $_UP['pasta'] ='../uploads/cliente'.$ultimo_id.'/';
