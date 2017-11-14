@@ -26,7 +26,7 @@ include("cabecalho.php");
       
     //diretorio do upload
             
-     $_UP['pasta'] ='uploads/cliente'.$ultimo_id.'/';
+     $_UP['pasta'] ='../uploads/cliente'.$ultimo_id.'/';
         
      mkdir($_UP['pasta'],0777);
        
