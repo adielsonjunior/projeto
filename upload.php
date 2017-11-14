@@ -7,17 +7,23 @@ include("cabecalho.php");
 //https://www.youtube.com/watch?v=iNm86iordCQ
 
   $nome = $_POST['nome'];
+  $vencimento = $_POST['vencimento'];
+  
+  //tem que vir do formulario com 1 ativo e 0 inativo   
+  $ativo = $_POST['ativo'];
+
+    
 
   $nome_arquivo = $_FILES['arquivo']['name'];
   $extensao =  strtolower(substr($_FILES['arquivo']['name'], -4));
     
-  $versao ='_v1.';
+  $versao ='_v1';
   $nome_arquivo = $nome.$versao.$extensao;
      
   
     //insert no banco de dados
 
-    $sql_code = "INSERT INTO contratos (nome,arquivo,dataCad) VALUES ('$nome','$nome_arquivo',NOW())";
+    $sql_code = "INSERT INTO contratos (nome,arquivo,dataCad,vencimento,ativo) VALUES ('$nome','$nome_arquivo',NOW(),$vencimento,$ativo)";
       
     mysqli_query($conexao,$sql_code);
                 
@@ -40,5 +46,4 @@ include("cabecalho.php");
         echo "Falha ao enviar o arquivo". msyqli_error();
         
       }
-  
 ?>
