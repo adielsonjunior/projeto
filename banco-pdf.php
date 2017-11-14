@@ -48,7 +48,6 @@ function inativaContrato($conexao,$id){
     
     $resultado = mysqli_query($conexao,$query);
     
-    var_dump($resultado);
-            
+               
 }
 
