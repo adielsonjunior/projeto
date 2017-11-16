@@ -9,7 +9,7 @@
     
 
 
-    if(inativaContrato($conexao, $id)) { ?>
+    if(!inativaContrato($conexao, $id)) { ?>
 
  
         <p class="text-success">Cliente Desativado <?=$id?></p>
@@ -21,7 +21,7 @@
 
     ?>
 
-    <p class="text-danger">Cliente <?=$id; ?> não foi Desativado<br> <?=$msg?></p>
+    <p class="text-danger">Cliente <?=$id;?> não foi Desativado<br> <?=$msg?></p>
     <?php
     }
 

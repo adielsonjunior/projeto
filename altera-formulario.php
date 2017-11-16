@@ -14,8 +14,9 @@ $pdf = buscaPdf($conexao,$id);
 
 	<form action="altera-pdf.php" method="post">
         
-    <table class="table">    
-    <input type="text" name="id" value="<?=$pdf['id']?>"/>   
+        
+         <table class="table">    
+    <input type="hidden" name="id" value="<?=$pdf['id']?>"/>   
 	
         
 	<tr>
@@ -28,10 +29,50 @@ $pdf = buscaPdf($conexao,$id);
 		<td><input type="file" class="form-control" name="arquivo" value="<?=$pdf['arquivo']?>"></td>
 	</tr>	
            
-   	<tr>
-		<td><input type="submit" class="btn btn-primary" value="Alterar"></td>
-	</tr>
+           
+    <tr>
+                <td>Vencimento:</td>
+                <td>
+                    <input type="date" class="form-control" name="vencimento" value="<?=$pdf['dataCad']?>">
+                </td>
+            </tr>
+
+            <tr>
+
+
+                <td>Ativo:</td>
+                <td><select name="ativo">
+                <option value="1">SIM </option>
+                <option value="0">NÃO </option>
+             
+             
+            </select></td>
+            </tr>
+            
+           
+
+            <tr>
+                <td><input type="submit" class="btn btn-primary form-control" value="Cadastrar"></td>
+            </tr>    
+        
+        
+        
+        
 </table>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+   
 
 </form>
 <?php 

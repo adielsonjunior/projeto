@@ -9,9 +9,9 @@ $pdfs = listaContratos($conexao);
 <table class="table table-striped table-bordered">
     <tr>
         <td>codigo</td>
-        <td>Contrato</td>
-        <td>Versão</td>
-        <td>Data</td>
+        <td>Cliente</td>
+        <td>Data Contrato</td>
+        <td>Cadastro</td>
         <td>Alterar</td>
         <td>Deletar</td>
     </tr>

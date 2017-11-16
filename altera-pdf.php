@@ -7,11 +7,13 @@
     $id = $_POST['id'];
     $nome = $_POST['nome'];
     $arquivo = $_FILES['arquivo'];
+    $dataCad = $_POST['dataCad'];
     $vencimento = $_POST['vencimento'];
+    $ativo = $_POST['ativo'];
     
 
 
-    if(alteraPdf($conexao, $id, $nome, $versao, $vencimento)) { ?>
+    if(alteraPdf($conexao, $id, $nome, $arquivo, $dataCad,$vencimento,$ativo)) { ?>
 
  
         <p class="text-success">Cliente alterado <?=$nome?></p>

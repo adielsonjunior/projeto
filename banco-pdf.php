@@ -23,9 +23,9 @@ function listaContratos($conexao){
 }
 
 
-function alteraPdf($conexao,$id,$nome,$versao,$vencimento){
+function alteraPdf($conexao,$id, $nome, $arquivo, $dataCad,$vencimento,$ativo){
     
-    $query = "update contratos set nome='{$nome}',arquivo='{$versao}',vencimento='{$vencimento} where id={$id}";
+    $query = "update contratos set nome='{$nome}',arquivo='{$versao}',dataCad='{$dataCad}',vencimento='{$vencimento}',ativo='{$ativo}' where id={$id}";
     
     return mysqli_query($conexao,$query);
 }
