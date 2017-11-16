@@ -29,7 +29,7 @@ include("cabecalho.php");
                 
      $ultimo_id =  mysqli_insert_id($conexao);
       
-      var_dump($sql_code);
+     // var_dump($sql_code);
     //diretorio do upload
             
      $_UP['pasta'] ='../uploads/cliente'.$ultimo_id.'/';
