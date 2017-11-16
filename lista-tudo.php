@@ -2,11 +2,12 @@
 require_once("cabecalho.php");
 require_once("banco-pdf.php");
 
-$pdfs = listaContratos($conexao);
+$pdfs = listaTodosContratos($conexao);
 
 
 ?>
 
+<a href="lista-pdf.php">Filtrar Ativos </a>    
 <table class="table table-striped table-bordered">
     <tr>
         <td>codigo</td>
@@ -18,7 +19,7 @@ $pdfs = listaContratos($conexao);
         <td>Deletar</td>
 
     </tr>
-    <a href="lista-tudo.php">Filtrar todos </a>
+
 
     <?php
 	/* Usando : no fim do foreach  pq tem o endforeach*/

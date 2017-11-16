@@ -23,6 +23,21 @@ function listaContratos($conexao){
 }
 
 
+function listaTodosContratos($conexao){
+    
+     
+    $pdfs = array();
+    
+    $resultado = mysqli_query($conexao, "SELECT * FROM contratos");
+    
+    while($pdf = mysqli_fetch_assoc($resultado)){
+        array_push($pdfs,$pdf);
+    }
+    return $pdfs;
+}
+
+
+
 function alteraPdf($conexao,$id, $nome, $arquivo, $dataCad,$vencimento,$ativo){
     
     $query = "update contratos set nome='{$nome}',arquivo='{$versao}',dataCad='{$dataCad}',vencimento='{$vencimento}',ativo='{$ativo}' where id={$id}";
