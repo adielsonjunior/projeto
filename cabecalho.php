@@ -19,7 +19,8 @@
             </div>
             <div>
                 <ul class="nav navbar-nav">
-                    <li><a href="formulario-pdf.php">Adiciona Produto</a></li>
+                    <li><a href="formulario-pdf.php">Cadastro PDF</a></li>
+                      <li><a href="formulario-cliente.php">Cadastro Cliente</a></li>
                     <li><a href="lista-pdf.php">Listar Produtos</a></li>
                     <li><a href="http://localhost/phpmyadmin/">admin</a></li>
                     
