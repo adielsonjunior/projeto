@@ -39,7 +39,7 @@ $pdfs = listaTodosContratos($conexao);
 
                 </td>
                 <td>
-                    <a href="uploads/cliente<?=$pdf['id']?>\<?=$pdf['arquivo']?>">
+                  <a href="uploads/cliente<?=$pdf['id']?>\<?=$pdf['arquivo']?>"></a>
                         <?=$pdf['arquivo']?>
                 </td>
 

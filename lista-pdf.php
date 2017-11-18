@@ -25,7 +25,6 @@ $pdfs = listaContratos($conexao);
 	foreach ($pdfs as $pdf):
 	?>
 
-
         <form action="altera-formulario.pdf.php" method="post">
             <tr>
                 
@@ -39,16 +38,16 @@ $pdfs = listaContratos($conexao);
                 </td>
                 <td>
                     <a href="uploads/cliente<?=$pdf['id']?>\<?=$pdf['arquivo']?>">
-                        <?=$pdf['arquivo']?>
+                      <?=$pdf['arquivo']?></a>
                 </td>
 
 
                 <td>
-                    <?= $pdf['vencimento'];?>
+                    <?=$pdf['vencimento'];?>
 
                 </td>
                 <td>
-                    <?= $pdf['ativo'];?>
+                    <?=$pdf['ativo'];?>
 
                 </td>
 

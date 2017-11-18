@@ -22,6 +22,7 @@
                     <li><a href="formulario-pdf.php">Cadastro PDF</a></li>
                       <li><a href="formulario-cliente.php">Cadastro Cliente</a></li>
                     <li><a href="lista-pdf.php">Listar Produtos</a></li>
+                    <li><a href="lista-clientes.php">Lista Clientes</a></li>
                     <li><a href="http://localhost/phpmyadmin/">admin</a></li>
                     
                 </ul>
