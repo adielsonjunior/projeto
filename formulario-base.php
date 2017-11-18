@@ -25,7 +25,7 @@
                 <td>Ativo:</td>
                 <td><select name="ativo">
                 <option value="1">SIM </option>
-                <option value="0">NÃO </option>
+                <option value="2">NÃO </option>
              
              
             </select></td>

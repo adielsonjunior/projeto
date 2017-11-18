@@ -5,7 +5,7 @@ require_once("cabecalho.php");
     
 ?>
 
-    <form action="logica-cliente.php" method="post">
+    <form action="envio-cliente.php" method="post">
 
         <table class="table">
                 

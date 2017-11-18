@@ -1,6 +1,6 @@
 
 
-<?php $cliente = array("nome" =>" ", "endereco" =>" ","telefone" =>" ", "cpf" =>" ", "ativo"=>"1"); ?>
+<?php $cliente = array("nome" =>" ", "endereco" =>" ","telefone" =>" ", "cpf" =>" ", "email" =>" ", "ativo"=>"1"); ?>
 
 <input type="hidden" name="id" value="<?=$cliente['id']?>">
 <tr>
@@ -17,16 +17,26 @@
 <tr>
     <td>Telefone:</td>
     <td>
-        <input type="text" class="form-control" name="telefone" value="<?=cliente['telefone']?>">
+        <input type="text" class="form-control" name="telefone" value="<?=$cliente['telefone']?>">
     </td>
 </tr>
 
 <tr>
-    <td>CPF:</td>
+    <td>CPF/CNPJ:</td>
     <td>
-        <input type="text" class="form-control" name="cpf" value="<?=cliente['cpf']?>">
+        <input type="text" class="form-control" name="cpf" value="<?=$cliente['cpf']?>">
     </td>
 </tr>
+
+
+
+<tr>
+    <td>E-mail:</td>
+    <td>
+        <input type="text" class="form-control" name="email" value="<?=$cliente['email']?>">
+    </td>
+</tr>
+
 
 
 <tr>
@@ -35,7 +45,7 @@
     <td>
         <select name="ativo">
                 <option value="1">SIM </option>
-                <option value="0">NÃO </option>
+                <option value="2">NÃO </option>
              
              
         </select></td>
