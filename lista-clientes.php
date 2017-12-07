@@ -5,13 +5,11 @@ require_once("banco-cliente.php");
 
 <table class="table table-striped table-bordered">
     <tr>
-        <td>codigo</td>
+        <td>Cód.</td>
         <td>Cliente</td>
-        <td>Contrato</td>
-        <td>Cadastro</td>
         <td>Ativo</td>
         <td>Alterar</td>
-        <td>Deletar</td>
+        <td>Remover</td>
 
     </tr>
     <a href="lista-tudo.php">Filtrar todos </a>
@@ -28,7 +26,6 @@ require_once("banco-cliente.php");
         <form action="altera-formulario.pdf.php" method="post">
             <tr>
                 
-
                 <td>
                     <?=$registro['id'] ?>
                 </td>
@@ -36,16 +33,7 @@ require_once("banco-cliente.php");
                     <?=$registro['nome'] ?>
 
                 </td>
-                <td>
-                    <a href="uploads/cliente<?=$registro['id']?>\<?=$registro['arquivo']?>">
-                      <?=$registro['arquivo']?></a>
-                </td>
-
-
-                <td>
-                    <?=$registro['vencimento'];?>
-
-                </td>
+              
                 <td>
                     <?=$registro['ativo'];?>
 

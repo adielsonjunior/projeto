@@ -1,25 +1,17 @@
 <?php
 require_once("cabecalho.php");
-
-   
-    
+      
 ?>
 
-    <form action="envio-cliente.php" method="post">
+<form action="envio-cliente.php" method="post">
 
-        <table class="table">
-                
-            <?php require_once("formulario-cliente-base.php");?>
-            
-            <tr>
-                <td><input type="submit" class="btn btn-primary form-control" value="Cadastrar"></td>
-            </tr>
+   
+    <?php $cliente = array("id" =>"","nome" =>" ", "endereco" =>" ","telefone" =>" ", "cpf" =>" ", "email" =>" ", "ativo"=>"1"); ?>
+    
+    <?php require_once "formulario-base.php"?>
+    
+    
 
-
-
-
-        </table>
-    </form>
-
-    <?php 
+<?php 
 include("rodape.php");
+?>

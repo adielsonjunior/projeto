@@ -1,10 +1,10 @@
 <?php
 require_once("cabecalho.php");
-require_once("banco-pdf.php");
+require_once("banco-cliente.php");
 
 $id = $_GET['id'];
 
-$pdf = buscaPdf($conexao,$id);
+$cliente = buscaCliente($conexao,$id);
     
 ?>    
 
@@ -15,20 +15,15 @@ $pdf = buscaPdf($conexao,$id);
 	<form action="altera-pdf.php" method="post">
         
         
-         <table class="table">    
+    <?php require_once "formulario-base.php"?>     
+             
+             
+             
   
             
            
 
-            <tr>
-                <td><input type="submit" class="btn btn-primary form-control" value="Cadastrar"></td>
-            </tr>    
-        
-        
-        
-        
-</table>
-        
+
         
         
         

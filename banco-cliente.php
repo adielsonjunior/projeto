@@ -22,3 +22,13 @@ function listaClientes($conexao){
     }
   return $clientes;
 }  
+
+function buscaCliente($conexao,$id){
+  $query = "SELECT * FROM cliente where id ={$id}";
+  $resultado = mysqli_query($conexao,$id);
+  
+  return mysqli_fetch_assoc($resultado);
+  
+  
+  
+}

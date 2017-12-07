@@ -1,32 +1,54 @@
-  <input type="hidden" name="id" value="<?=$pdf['id']?>"/>   
-	
- <?php $pdf = array("nome" =>" ", "arquivo" =>" ","vencimento" =>" ", "ativo" =>"1"); ?>
-	<tr>
-		<td>Nome: </td>
-		<td><input type="text" class="form-control" name ="nome" value="<?=$pdf['nome']?>"></td>
-	</tr>	
-	
-      <tr>
-		<td>arquivo:</td>
-		<td><input type="file" class="form-control" name="arquivo" value="<?=$pdf['arquivo']?>"></td>
-	</tr>	
-           
-           
+ <table class="table">
+		
+
+    <input type="hidden" name="id" value="<?=$cliente['id']?>">
+    
     <tr>
-                <td>Vencimento:</td>
-                <td>
-                    <input type="date" class="form-control" name="vencimento" value="<?=$pdf['dataCad']?>">
-                </td>
-            </tr>
+        <td>Nome: </td>
+        <td><input type="text" class="form-control" name="nome" value="<?=$cliente['nome']?>"></td>
+    </tr>
 
-            <tr>
+    <tr>
+        <td>Endereço:</td>
+        <td><input type="text" class="form-control" name="endereco" value="<?=$cliente['endereco']?>">
+    </td>
+    </tr>
+
+    <tr>
+        <td>Telefone:</td>
+    <td>
+        <input type="text" class="form-control" name="telefone" value="<?=$cliente['telefone']?>">
+    </td>
+    </tr>
+
+    <tr>
+        <td>CPF/CNPJ:</td>
+    <td>
+        <input type="text" class="form-control" name="cpf" value="<?=$cliente['cpf']?>">
+    </td>
+    </tr>
 
 
-                <td>Ativo:</td>
-                <td><select name="ativo">
-                <option value="1">SIM </option>
-                <option value="2">NÃO </option>
-             
-             
-            </select></td>
-            </tr>
+
+    <tr>
+        <td>E-mail:</td>
+    <td>
+        <input type="text" class="form-control" name="email" value="<?=$cliente['email']?>">
+    </td>
+    </tr>
+
+
+
+    <tr>
+        <td>Ativo:</td>
+        <td>
+        <select name="ativo">
+            <option value="1">SIM </option>
+            <option value="2">NÃO </option>
+
+
+        </select>
+        </td>
+    </tr>
+    
+    </table>
