@@ -6,21 +6,14 @@ include("cabecalho.php");
 //http://blog.thiagobelem.net/upload-de-arquivos-como-tudo-funciona
 //https://www.youtube.com/watch?v=iNm86iordCQ
 
-  $nome = $_POST['nome'];
-  $vencimento = $_POST['vencimento'];
-  
-  //tem que vir do formulario com 1 ativo e 0 inativo   
-  $ativo = $_POST['ativo'];
+$cliente['id'];
 
-    
+$vencimento = $_POST['vencimento'];
 
-  $nome_arquivo = $_FILES['arquivo']['name'];
-  $extensao =  strtolower(substr($_FILES['arquivo']['name'], -4));
+$nome_arquivo = $_FILES['arquivo']['name'];
+$extensao =  strtolower(substr($_FILES['arquivo']['name'], -4));
     
-  $versao ='_v1';
-  $nome_arquivo = $nome.$versao.$extensao;
-     
-  
+    
     //insert no banco de dados
 
     $sql_code = "INSERT INTO contratos (nome,arquivo,vencimento,ativo,dataCad) VALUES ('$nome','$nome_arquivo','{$vencimento}',$ativo,NOW())";

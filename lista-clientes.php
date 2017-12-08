@@ -9,7 +9,6 @@ require_once("helpers.php");
         <td>Cód.</td>
         <td>Cliente</td>
         <td>CPF</td>
-        <td>Endereço</td>
         <td>Ativo</td>
         <td>Alterar</td>
         <td>Remover</td>
@@ -33,7 +32,8 @@ require_once("helpers.php");
                     <?=$registro['id'] ?>
                 </td>
                 <td>
-                    <?=$registro['nome'] ?>
+                                      
+                   <a href="anexo.php?<?=$registro['id']?>"> <?=$registro['nome']?></a>
 
                 </td>
               
@@ -41,11 +41,7 @@ require_once("helpers.php");
                     <?=$registro['cpf'];?>
 
                 </td>  
-                <td>
-                    <?=$registro['endereco'];?>
-
-                </td> 
-                
+                                
                 <td>
                     <?=traduz_ativo($registro['ativo']);?>
 
