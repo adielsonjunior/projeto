@@ -24,11 +24,36 @@ function listaClientes($conexao){
 }  
 
 function buscaCliente($conexao,$id){
-  $query = "SELECT * FROM cliente where id ={$id}";
-  $resultado = mysqli_query($conexao,$id);
+  $query = 'SELECT * FROM clientes where id ='.$id;
+  $resultado = mysqli_query($conexao,$query);
   
   return mysqli_fetch_assoc($resultado);
   
   
+  
+}
+
+function alteraCliente($conexao,$id, $nome,$endereco,$telefone,$cpf,$email,$ativo){
+                    
+    
+    $query = "UPDATE clientes set 
+    nome='{$nome}',endereco='{$endereco}',
+    telefone='{$telefone}',cpf='{$cpf}',
+    email='{$email}',ativo={$ativo} 
+    where id={$id}";
+    
+    
+    return mysqli_query($conexao,$query);
+  
+  
+}
+
+function inativaCliente($conexao,$id){
+    $query = "UPDATE clientes set ativo=2 WHERE id={$id}";
+    
+    $resultado =  mysqli_query($conexao,$query);
+    
+    
+    
   
 }

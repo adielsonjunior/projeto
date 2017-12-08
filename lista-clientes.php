@@ -1,12 +1,15 @@
 <?php 
 require_once("cabecalho.php");
 require_once("banco-cliente.php");
+require_once("helpers.php");
 ?>
 
 <table class="table table-striped table-bordered">
     <tr>
         <td>Cód.</td>
         <td>Cliente</td>
+        <td>CPF</td>
+        <td>Endereço</td>
         <td>Ativo</td>
         <td>Alterar</td>
         <td>Remover</td>
@@ -23,7 +26,7 @@ require_once("banco-cliente.php");
     while($registro = mysqli_fetch_assoc($consulta)){?>
   
     
-        <form action="altera-formulario.pdf.php" method="post">
+        <form action="">
             <tr>
                 
                 <td>
@@ -35,10 +38,18 @@ require_once("banco-cliente.php");
                 </td>
               
                 <td>
-                    <?=$registro['ativo'];?>
+                    <?=$registro['cpf'];?>
+
+                </td>  
+                <td>
+                    <?=$registro['endereco'];?>
+
+                </td> 
+                
+                <td>
+                    <?=traduz_ativo($registro['ativo']);?>
 
                 </td>
-
 
 
 
@@ -48,10 +59,11 @@ require_once("banco-cliente.php");
 
         </form>
 
-        <form action="inativa-cliente.php" method="post">
+        <form action="inativa-cliente.php" method="get">
             <td>
-                <input type="hidden" name="id" value="<?=$registro['id']?>" />
-                <button class="btn btn-danger">Remover</button>
+                
+            <a class="btn btn-danger" href="inativa-cliente.php?id=<?php echo $registro['id']?>">Remover  </a>                   
+                               
             </td>
           
        

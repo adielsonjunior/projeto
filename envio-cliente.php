@@ -17,7 +17,7 @@ $ativo = $_POST['ativo'];
 
 if(insereCliente($conexao, $nome,$endereco, $telefone, $cpf, $email, $ativo)){?>
   
-  <p class="text-sucess"> Cliente <?=$nome?> Cadastrado com Sucesso</p>
+  <p class="text-success"> Cliente <?=$nome?><br> Cadastrado com Sucesso</p>
 <?php  
 }else{
   
