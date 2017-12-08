@@ -16,6 +16,17 @@ $ativo = $_POST['ativo'];
 
 
 if(insereCliente($conexao, $nome,$endereco, $telefone, $cpf, $email, $ativo)){?>
+
+<?php
+    $ultimo_id =  mysqli_insert_id($conexao);
+    
+     //diretorio do upload
+            
+     $_UP['pasta'] ='../uploads/cliente'.$ultimo_id.'/';
+    mkdir($_UP['pasta'],0777);
+        
+  ?>
+  
   
   <p class="text-success"> Cliente <?=$nome?><br> Cadastrado com Sucesso</p>
 <?php  
