@@ -1,7 +1,10 @@
 <?php
-function insereCliente($conexao, $nome,$endereco, $telefone, $cpf, $email, $ativo){
+function insereCliente($conexao, $nome,$endereco,
+$telefone, $cpf, $email, $ativo){
 
-  $query = "INSERT INTO clientes (nome, endereco,telefone,cpf, email, ativo) Values ('{$nome}','{$endereco}','{$telefone}','{$cpf}','{$email}','{$ativo}')";
+  $query = "INSERT INTO clientes (nome, endereco,telefone,cpf, email, ativo)
+  Values
+  ('{$nome}','{$endereco}','{$telefone}','{$cpf}','{$email}','{$ativo}')";
 
 
   $resultado = mysqli_query($conexao,$query);
@@ -33,7 +36,8 @@ function buscaCliente($conexao,$id){
 
 }
 
-function alteraCliente($conexao,$id, $nome,$endereco,$telefone,$cpf,$email,$ativo){
+function alteraCliente($conexao,$id, $nome,$endereco,
+$telefone,$cpf,$email,$ativo){
 
 
     $query = "UPDATE clientes set
@@ -72,7 +76,7 @@ function gravar_anexo($conexao,$anexo){
 }
 
 function buscar_anexos($conexao,$cliente_id){
-  $sql = "SELECT * FROM contratos WHERE cliente_id = {$cliente_id}";
+  $sql = "SELECT * FROM contratos WHERE cliente_id={$cliente_id}";
   $resultado = mysqli_query($conexao, $sql);
 
   $anexos = array();

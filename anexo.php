@@ -4,7 +4,7 @@ require_once("cabecalho.php");
 require_once("banco-cliente.php");
 require_once("helpers.php");
 
-$id = $_GET = 'id';
+$id = $_GET['id'];
 
 $cliente = buscaCliente($conexao,$id);
 
@@ -33,7 +33,7 @@ $anexos = buscar_anexos($conexao, $id);
     </tr>
 
      <tr>
-        <td><b>CPF/CNPJ:</b>   <?=$cliente['endereco'] ?></td>
+        <td><b>CPF/CNPJ:</b>   <?=$cliente['cpf'] ?></td>
     </tr>
 
     <tr>
@@ -61,7 +61,7 @@ $anexos = buscar_anexos($conexao, $id);
                 <tr>
                 <td><?php echo $anexo['nome']; ?> </td>
                 <td>
-                <a href="anexos/<?php echo $anexo['arquivo']; ?> ">
+                <a href="/anexos/cliente<?=$anexo['id']?>/<?php echo $anexo['arquivo']; ?>">
                 Download
                 </a>
                 </td>
@@ -73,7 +73,6 @@ $anexos = buscar_anexos($conexao, $id);
       <?php endif; ?>
 </td>
 </tr>
-
 
 
 

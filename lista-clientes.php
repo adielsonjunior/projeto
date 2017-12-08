@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once("cabecalho.php");
 require_once("banco-cliente.php");
 require_once("helpers.php");
@@ -15,33 +15,33 @@ require_once("helpers.php");
 
     </tr>
     <a href="lista-tudo.php">Filtrar todos </a>
-  
+
   <?php
   //referencias http://bloghospedandosites.com.br/retornar-uma-consulta-mysql-e-mostra-los-em-tabela/
     $sql = "SELECT * FROM clientes";
-    
+
     $consulta = mysqli_query($conexao,$sql);
-    
+
     while($registro = mysqli_fetch_assoc($consulta)){?>
-  
-    
+
+
         <form action="">
             <tr>
-                
+
                 <td>
                     <?=$registro['id'] ?>
                 </td>
                 <td>
-                                      
-                   <a href="anexo.php?<?=$registro['id']?>"> <?=$registro['nome']?></a>
+                      
+                   <a href="anexo.php?id=<?=$registro['id']?>"> <?=$registro['nome']?></a>
 
                 </td>
-              
+
                 <td>
                     <?=$registro['cpf'];?>
 
-                </td>  
-                                
+                </td>
+
                 <td>
                     <?=traduz_ativo($registro['ativo']);?>
 
@@ -57,14 +57,13 @@ require_once("helpers.php");
 
         <form action="inativa-cliente.php" method="get">
             <td>
-                
-            <a class="btn btn-danger" href="inativa-cliente.php?id=<?php echo $registro['id']?>">Remover  </a>                   
-                               
-            </td>
-          
-       
-        </form>
-  
-  
-<?php }?>
 
+            <a class="btn btn-danger" href="inativa-cliente.php?id=<?php echo $registro['id']?>">Remover  </a>
+
+            </td>
+
+
+        </form>
+
+
+<?php }?>

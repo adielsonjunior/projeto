@@ -6,7 +6,7 @@ require_once("conexao.php");
 require_once("banco-cliente.php");
 
 
-$nome =  $_POST['nome'];  
+$nome =  $_POST['nome'];
 $endereco = $_POST['endereco'];
 $telefone = $_POST['telefone'];
 $cpf = $_POST['cpf'];
@@ -19,21 +19,21 @@ if(insereCliente($conexao, $nome,$endereco, $telefone, $cpf, $email, $ativo)){?>
 
 <?php
     $ultimo_id =  mysqli_insert_id($conexao);
-    
+
      //diretorio do upload
-            
-     $_UP['pasta'] ='../uploads/cliente'.$ultimo_id.'/';
-    mkdir($_UP['pasta'],0777);
-        
+
+     $_UP['pasta'] ='anexos/cliente'.$ultimo_id.'/';
+     mkdir($_UP['pasta'],0777);
+
   ?>
-  
-  
+
+
   <p class="text-success"> Cliente <?=$nome?><br> Cadastrado com Sucesso</p>
-<?php  
+<?php
 }else{
-  
+
   $msg = mysqli_error($conexao);
-  
+
 ?>
 
 <p class="text-danger"> Cliente não foi Cadastrado<br> <?=$msg?> </p>
@@ -44,9 +44,3 @@ if(insereCliente($conexao, $nome,$endereco, $telefone, $cpf, $email, $ativo)){?>
 require_once("rodape.php");
 
 ?>
-
-
-
-
-
-
