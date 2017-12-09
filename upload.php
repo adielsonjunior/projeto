@@ -11,11 +11,11 @@ $cliente_id = $_POST['cliente_id'];
 $vencimento = $_POST['vencimento'];
 
 if(!isset($_FILES['anexo'])){
-  $tem_erros =  true;
+  $tem_erros =true;
   $erros_validacao['anexo'] = 'Voce tem que selecionar um arquivo para anexar';
 
 }else{
-
+  //tratar_anexo esta no helpers
     if(tratar_anexo($_FILES['anexo'],$cliente_id)){
       $anexo = array();
       $anexo['cliente_id'] = $cliente_id;
@@ -25,13 +25,12 @@ if(!isset($_FILES['anexo'])){
 
     }else {
       $tem_erros = true;
-      $erros_validacao['anexo'] = 'Envie apenas anexos pdf ou imagens';
-      echo "Anexo Erro de Validacao";
-      var_dump($anexo);
-     }
+      $erros_validacao['anexo'] = 'Envie apenas contratos docx, pdf ou imagens';
+      var_dump($erros_validacao['anexo']);
+      die();
+       }
    }
-  if(!$tem_erros){
-    gravar_anexo($conexao,$anexo);
-    echo "Anexo cadastrado com Sucesso";
-
-  }
+      gravar_anexo($conexao,$anexo);
+      echo 'Anexo Cadastrado com sucesso';
+      ?>
+      <a href="lista-clientes.php">Voltar </a>

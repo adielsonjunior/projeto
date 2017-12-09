@@ -52,30 +52,36 @@ $anexos = buscar_anexos($conexao, $id);
         <td><b>Contratos:</b>
     <!-- lista de anexos -->
     <?php if (count($anexos) > 0) : ?>
-        <table>
-                <tr>
-                <th>Arquivo</th>
-                <th>Opções</th>
-                </tr>
-                <?php foreach ($anexos as $anexo) : ?>
-                <tr>
+    </table>
+    <table class="table table-striped table-bordered">
+          <tr>
+              <th>Arquivo</th>
+              <th>Vencimento</th>
+              <th>Opções</th>
+          </tr>
+              <?php foreach ($anexos as $anexo) : ?>
+          <tr>
                 <td><?php echo $anexo['nome']; ?> </td>
+                    <td><?php echo traduz_data($anexo['vencimento']); ?> </td>
                 <td>
-                <a href="/anexos/cliente<?=$anexo['id']?>/<?php echo $anexo['arquivo']; ?>">
-                Download
-                </a>
-                </td>
-                </tr>
-                <?php endforeach; ?>
-        </table>
-    <?php else : ?>
-      <p>Não há anexos para esta tarefa.</p>
+              <a href="../anexos/cliente<?=$id?>/<?php echo $anexo['nome']; ?>">
+                Download</a>
+
+            <a href="../anexos/cliente<?=$id?>/<?php echo $anexo['arquivo'];?>">
+          Excluir</a>
+            </td>
+          </tr>
+          <?php endforeach; ?>
+
+
+      <?php else : ?>
+      <p>Não há contratos para o cliente.</p>
       <?php endif; ?>
-</td>
-</tr>
+      </td>
+      </tr>
+      </table>
 
-
-
+      <table class="table table-striped table-bordered">
     <tr>
        <td><b>Vencimento:</b> <input type="date" name="vencimento"></td>
     </tr>
