@@ -49,6 +49,8 @@ $anexos = buscar_anexos($conexao, $id);
     </tr>
 
     <tr>
+        
+    </form>
         <td><b>Contratos:</b>
     <!-- lista de anexos -->
     <?php if (count($anexos) > 0) : ?>
@@ -64,13 +66,36 @@ $anexos = buscar_anexos($conexao, $id);
                 <td><?php echo $anexo['nome']; ?> </td>
                     <td><?php echo traduz_data($anexo['vencimento']); ?> </td>
                 <td>
-              <a href="../anexos/cliente<?=$id?>/<?php echo $anexo['nome']; ?>">
-                Download</a>
+                    
+                    
+                <form action="download.php" method="post"> 
+            <!-- TESTANDO ENVIAR POR A HREF
+                <input type="hidden" name="cliente_id" value="<?php echo $anexo['cliente_id']?>"/>       
+                    
+            <a class="btn btn-primary" href="download.php?nome=<?php echo $anexo['nome']?>?id="<?php echo $anexo['cliente_id']?>""> Download</a>
+                     
+         -->  
 
-            <a href="../anexos/cliente<?=$id?>/<?php echo $anexo['arquivo'];?>">
-          Excluir</a>
-            </td>
-          </tr>
+            <input type="hidden" name="cliente_id" value="<?php echo $anexo['cliente_id']?>"/> 
+            <input type="hidden" name="nome" value="<?php echo $anexo['nome']?>"/> 
+                    
+            <input type="submit" value="Download">        
+                    
+                    </form>            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+               <a class="btn btn-danger" href="download.php?id=<?php echo $anexo['id']?>">Excluir</a>    
+                
+                    
+           
+                  </tr>
           <?php endforeach; ?>
 
 

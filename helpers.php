@@ -32,3 +32,5 @@ function traduz_data($data){
 
 	return $data_exibir;
 }
+
+
