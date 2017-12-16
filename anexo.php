@@ -12,7 +12,7 @@ $anexos = buscar_anexos($conexao, $id);
 
 ?>
 
-<form action="upload.php" method="post" enctype="multipart/form-data" >
+
 
 <table class="table table-striped table-bordered">
 
@@ -49,66 +49,50 @@ $anexos = buscar_anexos($conexao, $id);
     </tr>
 
     <tr>
-        
-    </form>
+           </table> 
+
         <td><b>Contratos:</b>
-    <!-- lista de anexos -->
+    
+	<!-- lista de anexos !-->
+
+
+
     <?php if (count($anexos) > 0) : ?>
-    </table>
+
     <table class="table table-striped table-bordered">
           <tr>
               <th>Arquivo</th>
               <th>Vencimento</th>
-              <th>Opções</th>
-          </tr>
-              <?php foreach ($anexos as $anexo) : ?>
-          <tr>
-                <td><?php echo $anexo['nome']; ?> </td>
-                    <td><?php echo traduz_data($anexo['vencimento']); ?> </td>
-                <td>
-                    
-                    
-                <form action="download.php" method="post"> 
-            <!-- TESTANDO ENVIAR POR A HREF
-                <input type="hidden" name="cliente_id" value="<?php echo $anexo['cliente_id']?>"/>       
-                    
-            <a class="btn btn-primary" href="download.php?nome=<?php echo $anexo['nome']?>?id="<?php echo $anexo['cliente_id']?>""> Download</a>
-                     
-         -->  
-
-            <input type="hidden" name="cliente_id" value="<?php echo $anexo['cliente_id']?>"/> 
-            <input type="hidden" name="nome" value="<?php echo $anexo['nome']?>"/> 
-                    
-            <input type="submit" value="Download">        
-                    
-                    </form>            
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-               <a class="btn btn-danger" href="download.php?id=<?php echo $anexo['id']?>">Excluir</a>    
-                
-                    
-           
-                  </tr>
-          <?php endforeach; ?>
-
-
-      <?php else : ?>
-      <p>Não há contratos para o cliente.</p>
-      <?php endif; ?>
-      </td>
-      </tr>
-      </table>
-
+				<th>Opções</th>
+			  	  			  
+			  </tr>
+                  <?php foreach ($anexos as $anexo) : ?>
+                    <tr>
+                        <td><?php echo $anexo['nome']; ?> </td>
+						<td><?php echo traduz_data($anexo['vencimento']); ?> </td>
+						
+                          
+						  <td>
+                          <a href="anexos/cliente<?php echo $anexo['cliente_id']?>/<?php echo $anexo['arquivo']; ?> ">
+                          Download
+                          </a>
+                       </td>
+                    </tr>
+                <?php endforeach; ?>
+                </table>
+              <?php else : ?>
+      <span>Não há anexos para esta tarefa.</span>
+          <?php endif; ?>
+      
+	 <form action="upload.php" method="post" enctype="multipart/form-data" >
       <table class="table table-striped table-bordered">
+	  
+
+	
+	  
+	   <input type="hidden" name="cliente_id" value="<?php echo $id;?>"/>
     <tr>
-       <td><b>Vencimento:</b> <input type="date" name="vencimento"></td>
+       <td><b>Vencimento:</b> <input type="date" name="vencimento"/></td>
     </tr>
 
      <tr>
