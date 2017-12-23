@@ -81,7 +81,7 @@ $anexos = buscar_anexos($conexao, $id);
                 <?php endforeach; ?>
                 </table>
               <?php else : ?>
-      <span>Não há anexos para esta tarefa.</span>
+      <span>Não há anexos para este Cliente.</span>
           <?php endif; ?>
       
 	 <form action="upload.php" method="post" enctype="multipart/form-data" >

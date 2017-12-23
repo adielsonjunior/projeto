@@ -8,7 +8,7 @@ function traduz_ativo($ativo){
 }
 
 function tratar_anexo($anexo,$cliente_id) {
-$padrao = '/^.+(\.pdf|\.zip|\.docx|\.txt)$/';
+$padrao = '/^.+(\.pdf|\.zip|\.txt|\.png|\.docx|\.doc|\.jpg|\.jpeg)$/';
 $resultado = preg_match($padrao, $anexo['name']);
 if (! $resultado) {
 return false;
@@ -32,5 +32,3 @@ function traduz_data($data){
 
 	return $data_exibir;
 }
-
-
