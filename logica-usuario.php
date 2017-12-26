@@ -10,7 +10,7 @@ function buscar_usuario($conexao, $email, $senha) {
 }
 
 function verificar_usuario_logado(){
-  return isset($_SESSION["usuario_logado]");
+  return isset($_SESSION["usuario_logado"]);
 }
 
 function logar_usuario($email){
@@ -18,13 +18,13 @@ function logar_usuario($email){
 
 }
 
-functio usuario_logado(){
+function usuario_logado(){
   $_SESSION["usuario_logado"] = $email;
 }
 
 function verificar_usuario(){
   if(!verificar_usuario_logado()){
-    header()
+    header("Location:index.php");
   }
 
 }

@@ -1,6 +1,16 @@
 <?php
 include("cabecalho.php");
 ?>
+<?php if(isset($_GET["login"]) && $_GET["login"] == true) { ?>
+  <p class="alert-success"> Usuário Logado com Sucesso</p>
+<?php }?>
+
+
+  <?php if(isset($_GET["login"]) && $_GET["login"] == false){?>
+    <p class="alert-danger"> Usuário ou Senha incorreta</p>
+  <?php } ?>
+
+
 
   <h1>Sistema de Gestão de Contratos</h1>
  <br>
@@ -24,7 +34,5 @@ include("cabecalho.php");
 
     </table>
  </form>
-
-<?php
-include("rodape.php");
-?>
+    <?php}?>
+<?php include("rodape.php");?>
