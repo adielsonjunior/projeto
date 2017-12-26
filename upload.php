@@ -3,9 +3,10 @@ include("conexao.php");
 include("cabecalho.php");
 include("helpers.php");
 include("banco-cliente.php");
+include("logica-usuario.php");
 
 
-
+verificar_usuario();
 
 $cliente_id = $_POST['cliente_id'];
 $vencimento = $_POST['vencimento'];

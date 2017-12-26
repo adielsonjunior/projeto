@@ -2,6 +2,9 @@
 require_once("cabecalho.php");
 require_once("banco-cliente.php");
 require_once("helpers.php");
+require_once("logica-usuario.php");
+verificar_usuario();
+
 ?>
 
 <table class="table table-striped table-bordered">
@@ -32,7 +35,7 @@ require_once("helpers.php");
                     <?=$registro['id'] ?>
                 </td>
                 <td>
-                      
+
                    <a href="anexo.php?id=<?=$registro['id']?>"> <?=$registro['nome']?></a>
 
                 </td>

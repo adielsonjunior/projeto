@@ -3,6 +3,10 @@
 require_once("cabecalho.php");
 require_once("banco-cliente.php");
 require_once("helpers.php");
+include("logica-usuario.php");
+
+
+verificar_usuario();
 
 $id = $_GET['id'];
 
@@ -49,10 +53,10 @@ $anexos = buscar_anexos($conexao, $id);
     </tr>
 
     <tr>
-           </table> 
+           </table>
 
         <td><b>Contratos:</b>
-    
+
 	<!-- lista de anexos !-->
 
 
@@ -64,14 +68,14 @@ $anexos = buscar_anexos($conexao, $id);
               <th>Arquivo</th>
               <th>Vencimento</th>
 				<th>Opções</th>
-			  	  			  
+
 			  </tr>
                   <?php foreach ($anexos as $anexo) : ?>
                     <tr>
                         <td><?php echo $anexo['nome']; ?> </td>
 						<td><?php echo traduz_data($anexo['vencimento']); ?> </td>
-						
-                          
+
+
 						  <td>
                           <a href="anexos/cliente<?php echo $anexo['cliente_id']?>/<?php echo $anexo['arquivo']; ?> ">
                           Download
@@ -83,13 +87,13 @@ $anexos = buscar_anexos($conexao, $id);
               <?php else : ?>
       <span>Não há anexos para este Cliente.</span>
           <?php endif; ?>
-      
+
 	 <form action="upload.php" method="post" enctype="multipart/form-data" >
       <table class="table table-striped table-bordered">
-	  
 
-	
-	  
+
+
+
 	   <input type="hidden" name="cliente_id" value="<?php echo $id;?>"/>
     <tr>
        <td><b>Vencimento:</b> <input type="date" name="vencimento"/></td>

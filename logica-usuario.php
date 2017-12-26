@@ -25,6 +25,7 @@ function usuario_logado(){
 function verificar_usuario(){
   if(!verificar_usuario_logado()){
     header("Location:index.php");
+    die();
   }
 
 }

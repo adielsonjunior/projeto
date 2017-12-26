@@ -1,8 +1,13 @@
 <?php
 require_once("cabecalho.php");
 require_once("banco-cliente.php");
+include("logica-usuario.php");
+
+
+verificar_usuario();
 
 $id = $_GET['id'];
+
 
 $cliente = buscaCliente($conexao,$id);
 
@@ -13,19 +18,19 @@ $cliente = buscaCliente($conexao,$id);
         $cliente['cpf'] = (isset($_POST['cpf'])) ? $_POST['cpf'] : $cliente['cpf'];
         $cliente['email'] = (isset($_POST['email'])) ? $_POST['email'] : $cliente['email'];
         $cliente['ativo'] = (isset($_POST['ativo'])) ? $_POST['ativo'] : $cliente['ativo'];
-  
+
 ?>
 <h1> Formulário de Alteração </h1>
 
 
 	<form action="altera-cliente.php" method="post">
-        
-        
-    <?php require_once "formulario-base.php"?>     
-  
-   
+
+
+    <?php require_once "formulario-base.php"?>
+
+
 
 </form>
-<?php 
-include("rodape.php");    
-?>    
+<?php
+include("rodape.php");
+?>
