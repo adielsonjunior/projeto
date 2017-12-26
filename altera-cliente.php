@@ -2,7 +2,7 @@
 
     require_once("cabecalho.php");
     require_once("banco-cliente.php");
-    include("logica-usuario.php");
+    require_once("logica-usuario.php");
 
     verificar_usuario();
 

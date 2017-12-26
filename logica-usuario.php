@@ -9,7 +9,17 @@ function buscar_usuario($conexao, $email, $senha) {
     return $usuario;
 }
 
-function verificar_usuario_logado(){
+
+function verificar_usuario(){
+  if(!usuario_esta_logado()){
+    $_SESSION["danger"] = "Você não tem acesso a esta funcionalidade";
+    header("Location:index.php");
+    die();
+  }
+
+}
+
+function usuario_esta_logado(){
   return isset($_SESSION["usuario_logado"]);
 }
 
@@ -19,13 +29,10 @@ function logar_usuario($email){
 }
 
 function usuario_logado(){
-  $_SESSION["usuario_logado"] = $email;
+  return $_SESSION["usuario_logado"];
 }
 
-function verificar_usuario(){
-  if(!verificar_usuario_logado()){
-    header("Location:index.php");
-    die();
+function logout(){
+  session_destroy();
+  session_start();
   }
-
-}

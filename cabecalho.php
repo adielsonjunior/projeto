@@ -1,8 +1,10 @@
-<?php error_reporting(E_ALL);?>
+<?php error_reporting(E_ALL ^ E_NOTICE);?>
 
-<?php require_once ("conexao.php");?>
+<?php require_once ("conexao.php");
+require_once ("alertas.php");
 
 
+?>
 <html>
 <head>
     <title>Contratos</title>
@@ -21,8 +23,10 @@
                 <ul class="nav navbar-nav">
                     <li><a href="formulario-cliente.php">Cadastro Cliente</a></li>
                     <li><a href="lista-clientes.php">Lista Clientes</a></li>
-                    <li><a href="http://localhost/phpmyadmin/">admin</a></li>
-                    
+
+
+
+
                 </ul>
             </div>
         </div>
@@ -31,3 +35,7 @@
     <div class="container">
 
     <div class="principal">
+      <?php
+       mostraAlerta("success");
+       mostraAlerta("danger");
+      ?>

@@ -1,19 +1,15 @@
 <?php
-include("cabecalho.php");
+require_once("cabecalho.php");
+require_once("logica-usuario.php");
 ?>
-<?php if(isset($_GET["login"]) && $_GET["login"] == true) { ?>
-  <p class="alert-success"> Usuário Logado com Sucesso</p>
-<?php }?>
 
 
-  <?php if(isset($_GET["login"]) && $_GET["login"] == false){?>
-    <p class="alert-danger"> Usuário ou Senha incorreta</p>
-  <?php } ?>
     <h1>Sistema de Gestão de Contratos</h1>
      <br>
-     <?php if(isset($_COOKIE["usuario_logado"])){?>
-       <p class="text-success"> Você esta logado como
-       <?=$_COOKIE["usuario_logado"]?></p>
+     <?php if(usuario_esta_logado()){?>
+       <p class="text-success">Você esta logado como <?=usuario_logado()?></p>
+        <br>
+       <a href="logout.php">Sair</a>
      <?php }else{?>
 
   <h4>Formulário de Login</h4>

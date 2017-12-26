@@ -1,14 +1,17 @@
 <?php
-include("conexao.php");
-include("logica-usuario.php");
+require_once("conexao.php");
+require_once("logica-usuario.php");
 
 $usuario = buscar_usuario($conexao,$_POST["email"],$_POST["senha"]);
 if($usuario== null){
-  header("Location: index.php?login=0");
+  $_SESSION["danger"] = "Usuário ou Senha Incorreto";
+  header("Location: index.php");
 
 }else{
-    header("Location: index.php?login=1");
-    setcookie("usuario_logado", $usuario["email"]);
+    $_SESSION["success"] = "Usuário logado com Sucesso";
+    header("Location: index.php");
+    logar_usuario($usuario["email"]);
+    var_dump($usuario);
 }
 
 die();

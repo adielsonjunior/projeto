@@ -1,9 +1,9 @@
 <?php
-include("conexao.php");
-include("cabecalho.php");
-include("helpers.php");
-include("banco-cliente.php");
-include("logica-usuario.php");
+require_once("conexao.php");
+require_once("cabecalho.php");
+require_once("helpers.php");
+require_once("banco-cliente.php");
+require_once("logica-usuario.php");
 
 
 verificar_usuario();
