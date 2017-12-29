@@ -8,7 +8,7 @@ function traduz_ativo($ativo){
 }
 
 function tratar_anexo($anexo,$cliente_id) {
-$padrao = '/^.+(\.pdf|\.zip|\.txt|\.png|\.docx|\.doc|\.jpg|\.jpeg)$/';
+$padrao = '/^.+(\.pdf|\.zip|\.txt|\.png|\.docx|\.doc|\.jpg|\.jpeg)$/i';
 $resultado = preg_match($padrao, $anexo['name']);
 if (! $resultado) {
 return false;
@@ -16,7 +16,7 @@ return false;
 
 
 move_uploaded_file($anexo['tmp_name'],
-"anexos/cliente{$cliente_id}/{$anexo['name']}");
+"../uploads/cliente{$cliente_id}/{$anexo['name']}");
 return true;
 }
 

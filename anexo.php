@@ -77,7 +77,7 @@ $anexos = buscar_anexos($conexao, $id);
 
 
 						  <td>
-                          <a href="anexos/cliente<?php echo $anexo['cliente_id']?>/<?php echo $anexo['arquivo']; ?> ">
+                 <a href="../uploads/cliente<?php echo $anexo['cliente_id']?>/<?php echo $anexo['arquivo']; ?>">
                           Download
                           </a>
                        </td>
