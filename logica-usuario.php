@@ -36,3 +36,35 @@ function logout(){
   session_destroy();
   session_start();
   }
+
+  
+  function listar_clientes_ativos($conexao){
+       $sql = "SELECT * FROM clientes where ativo = 1";
+       
+       $consulta = mysqli_query($conexao,$sql);
+       
+       $registros = array();
+
+        while($registro = mysqli_fetch_assoc($consulta)){
+        $registros[] = $registro;
+    }
+        return $registros;
+      
+  }
+  
+    
+  function listar_todos_clientes($conexao){
+       $sql = "SELECT * FROM clientes";
+       
+       $consulta = mysqli_query($conexao,$sql);
+       
+       $registros = array();
+
+        while($registro = mysqli_fetch_assoc($consulta)){
+        $registros[] = $registro;
+    }
+        return $registros;
+      
+  }
+  
+  

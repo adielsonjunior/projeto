@@ -15,19 +15,8 @@ verificar_usuario();
     'prazo'=>'',
     'ativo' =>1,
        );
-?>
-
-<?php
-
-  $listar_clientes =  array(
-    'id' => 0,
-    'nome' =>'',
-    'cpf'=>'',
-    'prazo'=>'',
-    'ativo' =>1,
-       );
   
-     $listar_clientes = listar_clientes_ativos($conexao);
+     $listar_clientes = listar_todos_clientes($conexao);
 require_once("tabela-cliente.php");
 ?>
 
