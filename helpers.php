@@ -16,24 +16,18 @@ return false;
 
       //Substituir os caracteres especiais
 	$original = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜüÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿRr"!@#$%&*()_-+={[}]/?;:,\\\'<>°ºª';
-    $substituir = 'aaaaaaaceeeeiiiidnoooooouuuuuybsaaaaaaaceeeeiiiidnoooooouuuyybyRr                                ';	
+    $substituir = 'aaaaaaaceeeeiiiidnoooooouuuuuybsaaaaaaaceeeeiiiidnoooooouuuyybyRr                                ';
 	$anexo['name'] = strtr(utf8_decode($anexo['name']), utf8_decode($original), $substituir);
-	
+
 	//Substituir o espaco em branco pelo traco
 	$anexo['name'] = str_replace(' ', '_', $anexo['name']);
-	
+
 	//Converter para minusculo
 	$anexo['name'] = strtolower($anexo['name']);
 
 
-
-
-
-
-
-
   move_uploaded_file($anexo['tmp_name'],
-"../uploads/cliente{$cliente_id}/{$anexo['name']}");
+"uploads/cliente{$cliente_id}/{$anexo['name']}");
 
 
 echo "enviando arquivo TEMP";

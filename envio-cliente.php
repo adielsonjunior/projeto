@@ -25,7 +25,7 @@ if(insereCliente($conexao, $nome,$endereco, $telefone, $cpf, $email, $ativo)){?>
 
      //diretorio do upload
 
-     $_UP['pasta'] ='anexos/cliente'.$ultimo_id.'/';
+     $_UP['pasta'] ='uploads/cliente'.$ultimo_id.'/';
      mkdir($_UP['pasta'],0777);
 
   ?>

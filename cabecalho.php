@@ -23,6 +23,7 @@ require_once ("alertas.php");
                 <ul class="nav navbar-nav">
                     <li><a href="formulario-cliente.php">Cadastro Cliente</a></li>
                     <li><a href="lista-clientes.php">Lista Clientes</a></li>
+                    <li><a href="cad-imoveis.php">Cadastro Imoveis</a></li>
 
 
 

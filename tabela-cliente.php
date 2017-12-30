@@ -4,6 +4,7 @@
         <td>Cliente</td>
         <td>CPF</td>
         <td>Ativo</td>
+        <td>Imovéis</td>
         <td>Alterar</td>
         <td>Remover</td>
 
@@ -11,8 +12,8 @@
     <a href="listar-todos.php">Filtrar todos </a>
 
   <?php
-   
-  
+
+
     foreach($listar_clientes as $registro){?>
 
 
@@ -38,6 +39,10 @@
 
                 </td>
 
+                <td>
+                  <a class="btn btn-success form-group" href="lista-imoveis.php?id=<?=$registro['id']?>">Imóveis</a>
+
+                </td>
 
 
                 <td>

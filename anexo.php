@@ -75,13 +75,16 @@ $anexos = buscar_anexos($conexao, $id);
                         <td><?php echo $anexo['nome']; ?> </td>
 						<td><?php echo traduz_data($anexo['vencimento']); ?> </td>
 
-
+            <form action="" method="post">
 						  <td>
-                 <a href="../uploads/cliente<?php echo $anexo['cliente_id']?>/<?php echo $anexo['arquivo']; ?>">
-                          Download
+                <a class="btn btn-primary" href="/uploads/cliente<?php
+                echo $anexo['cliente_id']?>/<?php echo $anexo['arquivo'];?>">Download</a>
+
                           </a>
                        </td>
                     </tr>
+                  </form>
+
                 <?php endforeach; ?>
                 </table>
               <?php else : ?>

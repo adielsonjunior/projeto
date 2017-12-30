@@ -22,40 +22,34 @@ if(!isset($_FILES['anexo'])){
       $anexo['cliente_id'] = $cliente_id;
       $anexo['nome'] = $_FILES['anexo']['name'];
       $anexo['arquivo']=$_FILES['anexo']['name'];
-      
-      
-      
+
+
+
       //Substituir os caracteres especiais
 	$original = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜüÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿRr"!@#$%&*()_-+={[}]/?;:,\\\'<>°ºª';
-    $substituir = 'aaaaaaaceeeeiiiidnoooooouuuuuybsaaaaaaaceeeeiiiidnoooooouuuyybyRr                                ';	
+    $substituir = 'aaaaaaaceeeeiiiidnoooooouuuuuybsaaaaaaaceeeeiiiidnoooooouuuyybyRr                                ';
 	$anexo['nome'] = strtr(utf8_decode($anexo['nome']), utf8_decode($original), $substituir);
-	
+
 	//Substituir o espaco em branco pelo traco
 	$anexo['nome'] = str_replace(' ', '-', $anexo['nome']);
-	
+
 	//Converter para minusculo
 	$anexo['nome'] = strtolower($anexo['nome']);
 
-      
-      
+
+
        //Substituir os caracteres especiais
 	$original = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜüÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿRr"!@#$%&*()_-+={[}]/?;:,\\\'<>°ºª';
-    $substituir = 'aaaaaaaceeeeiiiidnoooooouuuuuybsaaaaaaaceeeeiiiidnoooooouuuyybyRr                                ';	
+    $substituir = 'aaaaaaaceeeeiiiidnoooooouuuuuybsaaaaaaaceeeeiiiidnoooooouuuyybyRr                                ';
 	$anexo['arquivo'] = strtr(utf8_decode($anexo['arquivo']), utf8_decode($original), $substituir);
-	
+
 	//Substituir o espaco em branco pelo traco
 	$anexo['arquivo'] = str_replace(' ', '_', $anexo['arquivo']);
-	
+
 	//Converter para minusculo
 	$anexo['arquivo'] = strtolower($anexo['arquivo']);
-      
-      
-      
-      
-     
-    
-      
-      $anexo['vencimento'] = $vencimento;
+
+            $anexo['vencimento'] = $vencimento;
 
     }else {
       $tem_erros = true;
@@ -67,6 +61,6 @@ if(!isset($_FILES['anexo'])){
       gravar_anexo($conexao,$anexo);
       echo 'Anexo Cadastrado com sucesso';
       var_dump($anexo);
-      
+
       ?>
       <a href="lista-clientes.php">Voltar </a>
