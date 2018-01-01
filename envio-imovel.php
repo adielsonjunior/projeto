@@ -12,23 +12,51 @@ require_once("helpers.php");
 
 verificar_usuario();
 
-$cliente_id = $_POST['cliente_id'];
+
 
 $nome =  $_POST['nome'];
 $endereco = $_POST['endereco'];
+$tipo = $_POST['tipo'];
 $area = $_POST['area'];
 $banheiros = $_POST['banheiros'];
 $descricao = $_POST['descricao'];
 $destaques = $_POST['destaques'];
 $alugado = $_POST['alugado'];
-$vagas = $_POST['vagas'];
 $ativo = $_POST['ativo'];
+$vagas = $_POST['vagas'];
 $valor_aluguel = $_POST['valor_aluguel'];
-$foto_principal = $_FILES['foto_principal'];
+$foto_principal = $_FILES['foto_principal']['name'];
+$cliente_id = $_POST['cliente_id'];
 
 
 
+if(insere_imovel($conexao, $nome,$endereco,$tipo,
+$area, $banheiros,$descricao, $destaques, $alugado,$ativo,$vagas,
+$valor_aluguel,$foto_principal,$cliente_id)){?>
 
+
+
+  <p class="text-success"> Imóvel Cadastrado com Sucesso</p>
+<?php
+}else{
+
+  $msg = mysqli_error($conexao);
+
+?>
+
+<p class="text-danger"> Cliente não foi Cadastrado<br> <?=$msg?> </p>
+<?php
+}
+
+
+require_once("rodape.php");
+
+/*
+gravar_imovel($conexao,$anexo);
+echo 'Anexo Cadastrado com sucesso';
+var_dump($anexo);
+*/
+/*
 if(!isset($_FILES['foto_principal'])){
   $tem_erros =true;
   $erros_validacao['foto_principal'] = 'Voce tem que selecionar um arquivo para anexar';
@@ -70,11 +98,11 @@ if(!isset($_FILES['foto_principal'])){
       die();
        }
    }
+*/
 
 
-      gravar_imovel($conexao,$anexo);
-      echo 'Anexo Cadastrado com sucesso';
-      var_dump($anexo);
+?>
 
-      ?>
-      <a href="lista-clientes.php">Voltar </a>
+
+
+<a href="lista-clientes.php">Voltar </a>

@@ -1,5 +1,27 @@
 <?php
 
+function insere_imovel($conexao, $nome,$endereco,$tipo,
+$area, $banheiros,$descricao, $destaques, $alugado,$ativo,$vagas,
+$valor_aluguel,$foto_principal,$cliente_id){
+
+  $query = "INSERT INTO imoveis (nome, endereco, tipo, area,
+    banheiros, descricao, destaques, alugado, ativo, vagas, valor_aluguel,
+    foto_principal, cliente_id)
+  VALUES ('{$nome}', '{$endereco}', '{$tipo}', '{$area}',
+    '{$banheiros}', '{$descricao}', '{$destaques}',
+    '{$alugado}', '{$ativo}', '{$vagas}', '{$valor_aluguel}', '{$foto_principal}',
+     '{$cliente_id}')";
+
+
+  $resultado = mysqli_query($conexao,$query);
+
+  return $resultado;
+
+}
+
+
+
+
 function gravar_imovel($conexao,$imovel){
   $sqlGravar = "INSERT INTO imoveis
   (nome,endereco,

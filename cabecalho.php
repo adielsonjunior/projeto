@@ -1,4 +1,4 @@
-<?php error_reporting(E_ALL);?>
+<?php error_reporting(E_ALL ^ E_NOTICE );?>
 
 <?php require_once ("conexao.php");
 require_once ("alertas.php");

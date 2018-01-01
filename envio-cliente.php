@@ -16,7 +16,6 @@ $cpf = $_POST['cpf'];
 $email = $_POST['email'];
 $ativo = $_POST['ativo'];
 
-verificar_usuario();
 
 if(insereCliente($conexao, $nome,$endereco, $telefone, $cpf, $email, $ativo)){?>
 

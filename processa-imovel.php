@@ -24,81 +24,8 @@ $ativo = $_POST['ativo'];
 
 ?>
 
-<form class="" action="envio-imovel.php" enctype="multipart/form-data">
-
- <table class="table table-striped table-bordered">
-
-  <h2>Confira os dados Abaixo</h2>
-
-<table class="table">
-<tr>
-    <td><b>Imovél:<b></td>
-      <td><?=$nome?></td>
-</tr>
-<tr>
-<td><b>Tipo</b></td>
-<td> <?=$tipo?></td>
-</tr>
-
-<tr>
-    <td><b>Endereco:</td>
-    <td><?=$endereco?></td>
-</tr>
-
-<tr>
-
-</tr>
-
-<tr>
-    <td><b>Área em m²</b> </td>
-      <td><?=$area?></td>
-</tr>
-
-<tr>
-    <td><b>Banheiros:</b></td>
-        <td><?=$banheiros?></td>
-</tr>
-<tr>
-    <td><b>Descrição:</td>
-        <td><?=$descricao?> </td>
-</tr>
-<tr>
-    <td><b>Destaques:</td>
-    <td>?<?=$destaques?></td>
-  </tr>
-
-<tr>
-    <td><b>Alugado:</td>
-      <td>
-        <?=$alugado?>
-      </td>
-      </tr>
-
-<tr>
-    <td><b>Vagas:</td>
-        <td><?=$vagas?></td>
-</tr>
-
-<tr>
-    <td><b>Ativo:</td>
-      <td>
-            <?=$ativo?>
-      </td>
-</tr>
-
-
-  <tr>
-        <td><b>Foto Principal:</td>
-
-        <td><input type="file" name="foto_principal"></td>
-    </tr>
-
-
-<tr>
-       <td><input type="submit" value="Enviar"></td>
-    </tr>
-
-    </table>
-
+<form class="" action="envio-imovel.php" method="post" enctype="multipart/form-data">
+  <h2>Confira os dados Abaixo </h2>
+  <?php require_once("tabela-imoveis.php");?>
 
 </form>

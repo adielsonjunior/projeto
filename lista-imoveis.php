@@ -17,7 +17,6 @@ $cliente = buscaCliente($conexao,$id);
 
 
 $imoveis = buscar_imoveis($conexao, $id);
-var_dump($imoveis);
 
 ?>
 
@@ -34,22 +33,26 @@ var_dump($imoveis);
   </table>
 
 	<!-- lista de imoveis !-->
-
+  <b>Lista de Imóveis:
     <?php if (count($imoveis) > 0) : ?>
         <?php foreach ($imoveis as $imovel) :?>
   <table class="table table-striped table-bordered">
-  <b>Imóveis:
 
-    <tr>
-        <td><b>Cód_imóvel: </b><?=$imovel['id_imovel'] ?></td>
+
+    <td align="center"><img src="img\casa.png"></td>
 
     </tr>
+    <tr>
+        <td><b>Cód_imóvel: </b><?=$imovel['id_imovel']?></td>
+    </tr>
+<tr>
 
   <tr>
-      <td><b>Imovél: <?=$imovel['nome'] ?></td>
+      <td><b>Imovél: <?=$imovel['nome'] ?>
+        <p align="right"><a href="anexo.php?id=<?=$imovel['cliente_id']?>">Contratos </a></p></td>
+
 
   </tr>
-    <td align="center"><img src="img\casa.png"></td>
 
   <tr>
       <td><b>Endereco:</b>  <?=$imovel['endereco'] ?></td>
@@ -61,7 +64,10 @@ var_dump($imoveis);
 
     <tr>
       <td><b>Ativo:</b>  <?=$imovel['ativo'];?></td>
+
   </tr>
+
+
 
 
 
